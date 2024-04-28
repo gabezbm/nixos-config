@@ -87,6 +87,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      zsh
+      alacritty
+      zoxide
+      lazygit
     ];
   };
 
@@ -97,6 +101,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    neovim
+    tmux
+    keyd
+    chezmoi
+    tealdeer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -107,7 +116,32 @@
   #   enableSSHSupport = true;
   # };
 
+  programs.git.enable = true;
+
+  programs.git.config = {
+    init = {
+      defaultBranch = "main";
+    };
+    user = {
+      name = "Gabriel Zhang";
+      email = "gabriel.b.zhang@gmail.com";
+    };
+  };
+
   # List services that you want to enable:
+
+  services.keyd.enable = true;
+
+  services.keyd.keyboards = {
+    default = {
+      ids = [ "*" ];
+      settings = {
+        main = {
+          capslock = "oneshot(control)";
+        };
+      };
+    };
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
