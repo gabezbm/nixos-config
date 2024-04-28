@@ -91,6 +91,12 @@
       alacritty
       zoxide
       lazygit
+      starship
+      fd
+      ripgrep
+      eza
+      bat
+      stow
     ];
   };
 
@@ -104,8 +110,9 @@
     neovim
     tmux
     keyd
-    chezmoi
     tealdeer
+    zip
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -117,7 +124,6 @@
   # };
 
   programs.git.enable = true;
-
   programs.git.config = {
     init = {
       defaultBranch = "main";
