@@ -101,6 +101,9 @@
       python3
       nodejs_21
       corepack_21
+      discord
+      ueberzugpp
+      yazi
     ];
   };
 
@@ -119,9 +122,11 @@
     fastfetch
     zip
     unzip
-    libgcc
+    gcc13
     gnumake
   ];
+
+  environment.variables.EDITOR = "nvim";
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Hack" ]; })
