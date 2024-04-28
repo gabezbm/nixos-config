@@ -97,6 +97,10 @@
       eza
       bat
       stow
+      go
+      python3
+      nodejs_21
+      corepack_21
     ];
   };
 
@@ -109,10 +113,18 @@
     git
     neovim
     tmux
+    wget
     keyd
     tealdeer
+    fastfetch
     zip
     unzip
+    libgcc
+    gnumake
+  ];
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
