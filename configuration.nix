@@ -87,7 +87,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      zsh
       alacritty
       zoxide
       lazygit
@@ -102,9 +101,9 @@
       nodejs_21
       corepack_21
       discord
-      ueberzugpp
       yazi
     ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
@@ -139,6 +138,8 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs.zsh.enable = true;
 
   programs.git.enable = true;
   programs.git.config = {
