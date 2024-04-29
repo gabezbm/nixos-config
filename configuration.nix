@@ -108,6 +108,7 @@ in
       yazi
       microsoft-edge
       cider
+      meld
     ];
     shell = pkgs.zsh;
   };
@@ -131,6 +132,7 @@ in
     gnumake
     wl-clipboard
     xclip
+    gnomeExtensions.appindicator
   ];
 
   environment.variables.EDITOR = "nvim";
