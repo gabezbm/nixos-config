@@ -4,6 +4,9 @@
 
 { config, pkgs, ... }:
 
+let
+  unstable = import <unstable> { config = { allowUnfree = true; }; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -93,15 +96,18 @@
       starship
       fd
       ripgrep
+      fzf
       eza
       bat
-      stow
+      unstable.stow
       go
       python3
       nodejs_21
       corepack_21
       discord
       yazi
+      microsoft-edge
+      cider
     ];
     shell = pkgs.zsh;
   };
@@ -123,6 +129,8 @@
     unzip
     gcc13
     gnumake
+    wl-clipboard
+    xclip
   ];
 
   environment.variables.EDITOR = "nvim";
