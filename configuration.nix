@@ -109,6 +109,8 @@ in
       microsoft-edge
       cider
       meld
+      elixir
+      vscode
     ];
     shell = pkgs.zsh;
   };
@@ -165,13 +167,12 @@ in
   # List services that you want to enable:
 
   services.keyd.enable = true;
-
   services.keyd.keyboards = {
     default = {
       ids = [ "*" ];
       settings = {
         main = {
-          capslock = "oneshot(control)";
+          capslock = "leftcontrol";
         };
       };
     };
