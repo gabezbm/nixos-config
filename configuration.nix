@@ -111,6 +111,10 @@ in
       meld
       elixir
       vscode
+      cava
+      onefetch
+      tokei
+      unstable.clash-verge-rev
     ];
     shell = pkgs.zsh;
   };
